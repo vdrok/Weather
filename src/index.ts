@@ -14,8 +14,8 @@ points.map((point) => {
 	console.log("location: ", location)
 	weather.find({search: point.code, degreeType: "F"}, (err: any, result: any)  => {
 		// tslint:disable-next-line
+		if(err) console.log("Error: ", err)
+		// tslint:disable-next-line
 		console.log(JSON.stringify(result, null, 2))
 	})
-	// tslint:disable-next-line
-	console.log("point", point)
 })
